@@ -139,9 +139,9 @@ void setup()
     while (!tft.begin(SPI_SPEED));      // init
     tft.setFramebuffer(internal_fb);    // set the internal framebuffer
     tft.setDiffBuffers(&diff1, &diff2); // set the diff buffers
-    tft.setRotation(1);                 // landscape mode 1 : 320x240
+    tft.setRotation(0);                 // landscape mode 1 : 320x240
     tft.setDiffGap(4);                  // with have large 8K diff buffers so we can use a small gap. 
-    tft.setVSyncSpacing(1);             // lvgl is already controlling framerate: we just set this to 1 to minimize screen tearing. 
+    tft.setVSyncSpacing(0);             // lvgl is already controlling framerate 
     tft.clear(0);                       // black screen to start. 
 
 
