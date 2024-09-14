@@ -12,10 +12,11 @@ All the fancy features (differential redraws, vsync/screen tearing protection, d
 
 1. ILI9342(C) uses half-duplex SPI communication so the usual MOSI/MISO pins are replaced by a single SDA line.
 2. ILI9342(C) has non-adjustable refresh rate (around 70Hz) so the `setRefreshRate()` and `setRefeshMode()` methods are not available anymore. 
+3. ILI9342(C) screen orientation differs from that of ILI9341: orientation 0 and 2 are landscape (320x240) while orientation 1 and 3 are portrait (240x320). This is because the controller refreshes the screen along the horizontal 320px scanlines
 
 ## Wiring 
 
-The display can be connected to any SPi bus on the Teensy. The CS and DC pins can be freely chosen but *using a chip select capable teensy pin for DC (it does not matter for CS) will improve the driver performance*.
+The display can be connected to any SPI bus on the Teensy. The CS and DC pins can be freely chosen but *using a chip select capable teensy pin for DC (it does not matter for CS) will slightly improve the driver performance*.
 
 Possible wirings: 
 
